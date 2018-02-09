@@ -1,13 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+	<meta charset=utf-8>
+	<title>Feather Mask</title>
+	<meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name=viewport>
+	<meta content=yes name=apple-mobile-web-app-capable>
+	<meta content=black name=apple-mobile-web-app-status-bar-style>
+	<meta content="telephone=no" name=format-detection>
+	<script src=static/plugins/TweenMax.min.js></script>
+	<script src=static/plugins/MorphSVGPlugin.min.js></script>
+	<script src=static/plugins/findShapeIndex.js></script>
+	<script src=static/plugins/DrawSVGPlugin.min.js></script>
+	<script src=static/plugins/initDrawing.js></script>
+	<script src=static/plugins/iconfont.js></script>
+	<script src=static/plugins/CustomEase.js></script>
+	<script src=static/svg/tuedSVG.js></script>
+	<script src=static/plugins/tuedFuncs.js></script>
+	<script src=static/plugins/ScrollToPlugin.js></script>
+	<link href=./static/css/app.0ac4c40054ddb120e70fd6ffb4ea18d3.css rel=stylesheet>
 </head>
+
 <body>
-    <h1>冯志远的个人主页</h1>
-    
+	<div id=app></div>
+	<script type=text/javascript src=./static/js/manifest.c2e40f3dc6862bf0fdcf.js></script>
+	<script type=text/javascript src=./static/js/app.13b6e8d1e0a197899d69.js></script>
 </body>
+
 </html>
+<script>!function (window) {
+
+
+		var docWidth = 750;
+
+		var doc = window.document,
+			docEl = doc.documentElement,
+			resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+		var recalc = (function refreshRem() {
+			// var clientWidth = docEl.getBoundingClientRect().width;
+			// docEl.style.fontSize = Math.max(Math.min(20 * (clientWidth / docWidth), 11.2), 8.55) * 5 + 'px';
+			var clientWidth = docEl.getBoundingClientRect().width + 100;
+			docEl.style.fontSize = Math.max(Math.min(20 * (clientWidth / docWidth), 11.2), 8.55) * 4 + 'px';
+
+			return refreshRem;
+		})();
+
+		docEl.setAttribute('data-dpr', window.navigator.appVersion.match(/iphone/gi) ? window.devicePixelRatio : 1);
+
+		if (/iP(hone|od|ad)/.test(window.navigator.userAgent)) {
+			doc.documentElement.classList.add('ios');
+			if (parseInt(window.navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/)[1], 10) >= 8)
+				doc.documentElement.classList.add('hairline');
+		}
+
+		if (!doc.addEventListener) return;
+		window.addEventListener(resizeEvt, recalc, false);
+		doc.addEventListener('DOMContentLoaded', recalc, false);
+
+
+	}(window);</script>
